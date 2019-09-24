@@ -56,7 +56,7 @@ function compileTS (module) {
     !! options.emitOnError ? "" : "--noEmitOnError",
     "--nolib",
     "--rootDir",
-    process.cwd(),
+    options.rootDir ? path.resolve(options.rootDir) : process.cwd(),
     "--target",
     options.targetES5 ? "ES5" : "ES3", !! options.moduleKind ? "--module" : "", !! options.moduleKind ? options.moduleKind : "",
     "--outDir",
